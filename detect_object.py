@@ -17,9 +17,7 @@ def detect():
     parser.add_argument(     '--numThreads',     help='Number of CPU threads to run the model.',     required=False,      type=int,      default=4)
     parser.add_argument(     '--enableEdgeTPU',     help='Whether to run the model on EdgeTPU.',     action='store_true',    required=False, default=False)
     args = parser.parse_args()
-
-
-
+    
     model = args.model
     camera_id = int(args.cameraId)
     width = int(args.frameWidth) 
