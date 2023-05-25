@@ -1,1 +1,1 @@
-# Digital Weight Machine with Object Detection using RaspberryPi
+# SmartWeight : RaspberryPi-HX711 based Digital Weight Machine with Object Detection
