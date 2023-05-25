@@ -17,11 +17,7 @@ print("Detected Object : ", ob)
 connection = pq.connect(host="localhost",user="root",passwd="shakib32",database="products")
 cursor = connection.cursor()
 
-#crt = """CREATE TABLE Pro(ID INT(20) PRIMARY KEY AUTO_INCREMENT, TRACK CHAR(10), PRI INT(20))"""
-#cursor.execute(crt)
-
-#inst = "INSERT INTO price_list(product_name,product_price) VALUES ('orange',180),('banana',120);"
-#cursor.execute(inst)
+# Retrive from database 
 
 ret = "SELECT * from price_list;"
 cursor.execute(ret)
