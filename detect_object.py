@@ -1,17 +1,3 @@
-# Copyright 2021 The TensorFlow Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-"""Main script to run the object detection routine."""
 import argparse
 import sys
 import time
@@ -32,7 +18,7 @@ def detect():
     parser.add_argument(     '--enableEdgeTPU',     help='Whether to run the model on EdgeTPU.',     action='store_true',    required=False, default=False)
     args = parser.parse_args()
 
-    #run(args.model, int(args.cameraId), args.frameWidth, args.frameHeight, int(args.numThreads), bool(args.enableEdgeTPU))
+
 
     model = args.model
     camera_id = int(args.cameraId)
@@ -41,10 +27,6 @@ def detect():
     num_threads = int(args.numThreads) 
     enable_edgetpu = bool(args.enableEdgeTPU)
 
-#def run(model: str, camera_id: int, width: int, height: int, num_threads: int,
- #       enable_edgetpu: bool) -> None:
-#  """Continuously run inference on images acquired from the camera.
-#
 #  Args:
 #    model: Name of the TFLite object detection model.
 #    camera_id: The camera id to be passed to OpenCV.
@@ -101,6 +83,8 @@ def detect():
         if cnt == 20 : 
             #print("Detected Object : " , detection_result.detections[0].categories[0].category_name)
             #break
+            cap.release()
+            cv2.destroyAllWindows()
             return detection_result.detections[0].categories[0].category_name
     # Draw keypoints and edges on input image
         image = utils.visualize(image, detection_result)
