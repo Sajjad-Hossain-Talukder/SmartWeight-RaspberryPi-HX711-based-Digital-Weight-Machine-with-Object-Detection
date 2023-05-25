@@ -1,1 +1,1 @@
-# Digital-Weight-Machine-with-Object-Detection-using-RaspberryPi-
+# Digital Weight Machine with Object Detection using RaspberryPi
