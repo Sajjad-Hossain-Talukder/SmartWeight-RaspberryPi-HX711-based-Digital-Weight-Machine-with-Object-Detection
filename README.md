@@ -7,8 +7,8 @@ This project aims to develop a smart system that utilizes an HX711 module and a 
 ### RaspberryPI - HX711 Module - Load Cell Connection
 
 Source : https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/
+![image](https://github.com/Sajjad-Hossain-Talukder/SmartWeight-RaspberryPi-HX711-based-Digital-Weight-Machine-with-Object-Detection/assets/63524824/76314e3c-11f3-4c56-9e64-836144f047dc)
 
-![image](https://github.com/Sajjad-Hossain-Talukder/SmartWeight-RaspberryPi-HX711-based-Digital-Weight-Machine-with-Object-Detection/assets/63524824/5882e4db-8aac-4193-af7f-1c1b6b415be3)
 
 
 ### Snaps
