@@ -9,6 +9,12 @@
       crossorigin="anonymous"
     />
 
+    <style>
+        th {
+            border-bottom: 1px solid black; 
+        }
+    </style>
+
 </head>
     
     
@@ -40,36 +46,42 @@
 
 
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-2"></div>
-            <div class="col-lg-8 text-center m-5">
+            <div class="col-lg-8 text-center">
                 <h3> INVOICE </h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Weight (gram/s)</th>
-                            <th>Price (TK)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($row as $p)
-                        <tr>
-                            <td>{{ $p->product }}</td>
-                            <td>{{ number_format($p->weight,2) }}</td>
-                            <td>{{ number_format($p->price,2) }}</td>
-        
-                        </tr>
-                        @endforeach
-                        <tr>
-                            <td></td>
-                            <td> Subtotal : </td>
-                            <td>{{ number_format($sum,2) }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
+                <div>
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th> SL NO.</th>
+                                <th>Product</th>
+                                <th>Weight (gram/s)</th>
+                                <th>Price (TK)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $k = 1 ; ?>
+                            @foreach($row as $p)
+                            <tr>
+                                <td> <?php echo $k; ?> </td>
+                                <td>{{ $p->product }}</td>
+                                <td>{{ number_format($p->weight,2) }}</td>
+                                <td>{{ number_format($p->price,2) }}</td>
+                            </tr>
+                            <?php $k+=1; ?>
+                        
+                            @endforeach
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td> Subtotal : </td>
+                                <td>{{ number_format($sum,2) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="col-lg-2">
             
