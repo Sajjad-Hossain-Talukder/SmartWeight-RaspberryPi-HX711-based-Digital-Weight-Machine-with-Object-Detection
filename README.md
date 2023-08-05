@@ -18,3 +18,9 @@ Source : https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sen
 |<img src="public/images/WIN_20230525_15_14_10_Pro.jpg" >| <img src="public/images/WIN_20230525_15_15_18_Pro.jpg" >|
 |<img src="public/images/WIN_20230525_15_15_42_Pro.jpg" >| <img src="public/images/WIN_20230525_15_15_47_Pro.jpg" >|
 |<img src="public/images/WIN_20230525_15_15_59_Pro.jpg" >| |
+
+
+### Web Interface 
+
+![image](https://github.com/Sajjad-Hossain-Talukder/SmartWeight-RaspberryPi-HX711-based-Digital-Weight-Machine-with-Object-Detection/assets/63524824/a7f6fdb8-6491-4446-94a1-c9ca66a9eb31)
+
