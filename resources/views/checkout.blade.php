@@ -28,21 +28,30 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th> SL NO. </th>
                             <th>Product</th>
                             <th>Weight (gram/s)</th>
                             <th>Price (TK)</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            $k = 1 ; 
+                        ?> 
                         @foreach($row as $p)
                         <tr>
+                            <td> <?php echo $k; ?> </td>
                             <td>{{ $p->product }}</td>
                             <td>{{ number_format($p->weight,2) }}</td>
                             <td>{{ number_format($p->price,2) }}</td>
         
                         </tr>
+                        <?php
+                            $k += 1 ; 
+                        ?> 
                         @endforeach
                         <tr>
+                            <td></td>
                             <td></td>
                             <td> Subtotal : </td>
                             <td>{{ number_format($sum,2) }}</td>
