@@ -96,7 +96,7 @@ class admin extends Controller
         $object = $process->getOutput();
         //dd($object);
         $object = trim($object);
-        if($object=='orange'||$object=='banana'||$object=='garlic'||$object=='potato'|| $object=='onion'){
+        if(($object=='orange'||$object=='banana'||$object=='garlic'||$object=='potato'|| $object=='onion')&& $mes>0){
             return view('measurement',['detect' => $object , 'weight' => $mes ]); 
         }
         else return view('measurement',['detect' => '0' , 'weight' => $mes ]); 
@@ -127,21 +127,6 @@ class admin extends Controller
             'price' => $price  
         ]);
         return redirect(url('weight'));
-    }
-
-    public function checkout(){
-        $cus = DB::table('customer')->count();
-        $cus += 1 ;
-
-
-        $row = DB::table('sell_details')->select([
-            'product','weight','price' 
-        ])->where('cid',$cus)->get();
-
-        $sum = DB::table('sell_details')->sum('price');
-
-        return view('checkout',[ 'row'=> $row , 'sum' => $sum ]);
-
     }
 
     public function generatePDF(){
@@ -179,6 +164,21 @@ class admin extends Controller
         return redirect('weight');
     }
 
+    public function checkout(){
+        $cus = DB::table('customer')->count();
+        $cus += 1 ;
+
+        
+        $row = DB::table('sell_details')->select([
+            'product','weight','price' 
+        ])->where('cid',$cus)->get();
+        
+        $sum = DB::table('sell_details')->where('cid',$cus)->sum('price');
+        
+        return view('checkout',[ 'row'=> $row , 'sum' => $sum ]);
+
+
+    }
     public function print(){
 
         $imagePath = public_path('images/puc.png');
@@ -190,15 +190,17 @@ class admin extends Controller
         $cus = DB::table('customer')->count();
         $cus += 1 ;
 
-
+        //dd($cus);
         $row = DB::table('sell_details')->select([
             'product','weight','price' 
         ])->where('cid',$cus)->get();
-
-        $sum = DB::table('sell_details')->sum('price');
+        
+        $sum = DB::table('sell_details')->where('cid',$cus)->sum('price');
+        //dd($sum);
         DB::table('customer')->insert([
-            'name' => 'X',
+           'name' => 'X',
         ]);
+    
 
         $pdf = PDF::loadView('print',[ 'image'=> $image, 'row'=> $row , 'sum' => $sum ] );
         $id = (string)($cus);
